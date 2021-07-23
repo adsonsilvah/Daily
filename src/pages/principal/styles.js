@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 export const Texto = styled.Text `
 
     color: #fff;
-    font-size: 18;
+    font-size: 18px;
     align-items: center;
     justify-content: center;
     align-self: center;
@@ -15,7 +15,7 @@ export const Texto = styled.Text `
 export const Subtexto = styled.Text `
 
     color: #fff;
-    font-size: 18;
+    font-size: 18px;
     align-items: center;
     justify-content: center;
     align-self: center ;
