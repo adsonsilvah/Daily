@@ -8,7 +8,7 @@ export const Texto = styled.Text `
     justify-content: center;
     align-self: center;
     font-weight: bold;
-
+    margin: 10px;
 
 `;
 

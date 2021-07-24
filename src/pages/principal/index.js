@@ -1,8 +1,8 @@
-import * as React from 'react';
-import {Texto,Subtexto,Botao } from './styles';
+import {Texto,Subtexto } from './styles';
 import { Container } from '../../themes/styles';
-import {AntDesign} from '@expo/vector-icons';
 import MyComponent from './FormCadastro/CadastroModal';
+import * as React from 'react';
+
 
 export default function Principal() {
     
@@ -25,9 +25,12 @@ export default function Principal() {
 
         <MyComponent/>
 
+        
+
    </Container> 
 
    </>
    );
  
 }
+
