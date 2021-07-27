@@ -1,33 +1,37 @@
-import {Texto,Subtexto } from './styles';
+import {Texto,Subtexto, Bottom, TextoBotao } from './styles';
 import { Container } from '../../themes/styles';
 import MyComponent from './FormCadastro/CadastroModal';
 import * as React from 'react';
 
 
-export default function Principal() {
-    
+
+export default function Principal({navigation}) {
+    const Habito = () => {
+
+        navigation.navigate("Habito");
+    }
     return (
     <>
     
-    <Container>
-
-         <Texto>
-             Você ainda não possui nenhum hábito
-         </Texto>
-         
-    </Container>
-
-    <Container>
-
-            <Subtexto>  
-             Adicione aqui seu primeiro hábito
-            </Subtexto>
-
-        <MyComponent/>
-
+        
+        <Container>
+        <Bottom onPress = {() => Habito()}>
+            <TextoBotao>Estudar</TextoBotao>
+        </Bottom>
+        <Bottom >
+            <TextoBotao>Correr</TextoBotao>
+        </Bottom>
+        <Bottom >
+            <TextoBotao>Ler</TextoBotao>
+        </Bottom>
         
 
-   </Container> 
+       <MyComponent/>
+
+   
+
+  </Container> 
+ 
 
    </>
    );

@@ -35,3 +35,21 @@ export const Botao = styled.TouchableOpacity `
 
 
 `;
+
+export const Bottom = styled.TouchableOpacity `
+
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    padding-horizontal: 145px;
+    padding-vertical: 15px;
+    margin: 25px;
+
+`;
+export const TextoBotao = styled.Text `
+
+color: #000;
+font-size: 14px;
+font-weight: bold;
+`;

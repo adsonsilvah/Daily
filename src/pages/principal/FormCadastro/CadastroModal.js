@@ -103,6 +103,7 @@ const styles = StyleSheet.create({
     fontSize: 25
   },
 
+
   input: {
     alignSelf: 'stretch',
     backgroundColor: '#FFF',

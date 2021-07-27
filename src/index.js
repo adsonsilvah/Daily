@@ -1,3 +1,3 @@
 import Principal from "./pages/principal";
-
-export {Principal};
+import Habito from "./pages/habito";
+export {Principal,Habito};
