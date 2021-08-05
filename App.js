@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Principal, Habito } from './src';
+import { Principal, Habito, NewHabito } from './src';
 import * as React from 'react';
 
 
@@ -12,7 +12,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName = 'Principal'>
         <Stack.Screen name="Principal" component={Principal} options = 
-        {{title: 'Seus Hábitos',headerStyle: {backgroundColor: '#152349',
+        {{title: 'Meus Hábitos',headerStyle: {backgroundColor: '#152349',
         borderBottomWidth: 2, 
         borderBottomColor: "#fff",
           }, 
@@ -30,7 +30,27 @@ function App() {
           name= "Habito"
           component={Habito}
           options = 
-          {{title: 'Estudar',headerStyle: {backgroundColor: '#152349',
+          {{title: '',headerStyle: {backgroundColor: '#152349',
+          borderBottomWidth: 2, 
+          borderBottomColor: "#fff",
+            }, 
+            headerTintColor: '#fff', 
+            headerTitleStyle: 
+            {fontWeight: 'bold',
+            alignContent: 'center', 
+            alignItems: 'center', 
+            alignSelf: 'flex-start',
+            fontSize: 25,
+            
+          }}}
+          
+          />
+
+          <Stack.Screen 
+          name = "NewHabito"
+          component = {NewHabito}
+          options = 
+          {{title: 'cadastre seu hábito aqui',headerStyle: {backgroundColor: '#152349',
           borderBottomWidth: 2, 
           borderBottomColor: "#fff",
             }, 
@@ -43,7 +63,6 @@ function App() {
             fontSize: 25,
             
           }}}
-          
           />
 
       </Stack.Navigator>

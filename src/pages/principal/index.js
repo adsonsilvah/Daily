@@ -1,36 +1,85 @@
-import {Texto,Subtexto, Bottom, TextoBotao } from './styles';
-import { Container } from '../../themes/styles';
-import MyComponent from './FormCadastro/CadastroModal';
-import * as React from 'react';
-
-
+import React, {useEffect, useState} from 'react';
+import database from '../../config/firebaseconfig';
+import { FontAwesome } from '@expo/vector-icons';
+import style from './style';
+import { 
+    View,
+    Text,
+    TouchableOpacity,
+    FlatList,
+     } from "react-native";
 
 export default function Principal({navigation}) {
-    const Habito = () => {
+  
+    const [habito, setHabito] = useState([]);
 
-        navigation.navigate("Habito");
+    function deleteHabito (id){
+        database.collection("Habitos").doc(id).delete();
     }
+    useEffect(() => {
+        database.collection("Habitos").onSnapshot((query) =>{
+            const list = []
+
+            query.forEach((doc) => {
+                list.push({...doc.data(), id: doc.id})
+            })
+            setHabito(list)
+        }
+        )
+    },[])
     return (
     <>
-    
-        
-        <Container>
-        <Bottom onPress = {() => Habito()}>
-            <TextoBotao>Estudar</TextoBotao>
-        </Bottom>
-        <Bottom >
-            <TextoBotao>Correr</TextoBotao>
-        </Bottom>
-        <Bottom >
-            <TextoBotao>Ler</TextoBotao>
-        </Bottom>
-        
+    <View style = {style.Container}>
+          
+          <FlatList
+          showsVerticalScrollIndicator = {false}
+          data = {habito}
+          renderItem = {( { item } ) => {
+              return(
+        <View style = {style.Tasks}>
 
-       <MyComponent/>
+            <TouchableOpacity 
+        style = {style.deleteTask}
+        onPress= {() => {
+            deleteHabito(item.id)
+        }}
+        >
+            <FontAwesome
+            name = "trash"
+            size = {23}
+            color = "#fff"
+            >
 
-   
+            </FontAwesome>
+            
+        </TouchableOpacity>
 
-  </Container> 
+        <Text
+        style = {style.DescriptionTask}
+        onPress = {() => {
+            navigation.navigate("Habito", {
+                id: item.id,
+                description: item.description,
+
+            })
+        }}
+        >
+            {item.description}
+        </Text>
+        </View>
+    );
+          }}
+          />
+
+        <TouchableOpacity 
+        style = {style.buttonNewTask}
+        onPress= {() => navigation.navigate("NewHabito")}
+        >
+            <Text style = {style.iconButton}>+</Text>
+        </TouchableOpacity>
+
+
+      </View>
  
 
    </>
