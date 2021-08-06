@@ -54,6 +54,8 @@ export default function Principal({navigation}) {
             
         </TouchableOpacity>
 
+        
+
         <Text
         style = {style.DescriptionTask}
         onPress = {() => {
