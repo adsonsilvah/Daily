@@ -2,12 +2,10 @@ import React, {useEffect, useState} from 'react';
 import database from '../../config/firebaseconfig';
 import { FontAwesome } from '@expo/vector-icons';
 import style from './style';
-import { 
-    View,
-    Text,
-    TouchableOpacity,
-    FlatList,
-     } from "react-native";
+import { View,Text,TouchableOpacity,FlatList,} from "react-native";
+import EditHabito from '../cadastra/edit';
+
+
 
 export default function Principal({navigation}) {
   
@@ -29,6 +27,7 @@ export default function Principal({navigation}) {
     },[])
     return (
     <>
+    
     <View style = {style.Container}>
           
           <FlatList
@@ -46,6 +45,19 @@ export default function Principal({navigation}) {
         >
             <FontAwesome
             name = "trash"
+            size = {23}
+            color = "#fff"
+            >
+
+            </FontAwesome>
+            
+        </TouchableOpacity>
+
+        <TouchableOpacity 
+        style = {style.deleteTask}
+        >
+            <FontAwesome
+            name = "pencil"
             size = {23}
             color = "#fff"
             >
@@ -83,7 +95,7 @@ export default function Principal({navigation}) {
 
       </View>
  
-
+          
    </>
    );
  
