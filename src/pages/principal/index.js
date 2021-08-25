@@ -5,8 +5,6 @@ import style from './style';
 import { View,Text,TouchableOpacity,FlatList,} from "react-native";
 import EditHabito from '../cadastra/edit';
 
-
-
 export default function Principal({navigation}) {
   
     const [habito, setHabito] = useState([]);
