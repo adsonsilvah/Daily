@@ -3,7 +3,7 @@ import database from '../../config/firebaseconfig';
 import { FontAwesome } from '@expo/vector-icons';
 import style from './style';
 import { View,Text,TouchableOpacity,FlatList,} from "react-native";
-import EditHabito from '../cadastra/edit';
+import EditHabito from '../edit/index';
 
 export default function Principal({navigation}) {
   
