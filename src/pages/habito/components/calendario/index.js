@@ -1,7 +1,6 @@
 import React from 'react';
-import {Text} from 'react-native';
 import { Container } from '../../../../themes/styles';
-import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
+import {Calendar, CalendarList} from 'react-native-calendars';
 import {LocaleConfig} from 'react-native-calendars';
 
 LocaleConfig.locales['fr'] = {
@@ -27,6 +26,8 @@ export default function Calendario() {
             scrollEnabled={true}
             // Enable or disable vertical scroll indicator. Default = false
             showScrollIndicator={true}
+
+            maxDate = { new Date()}
            />
       </Container>
     );
