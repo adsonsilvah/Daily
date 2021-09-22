@@ -21,6 +21,14 @@ const styles = StyleSheet.create({
         alignSelf: "flex-end",
         justifyContent: "center",
         paddingLeft: 15,
+    },
+    ViewTeste: {
+        backgroundColor: '#fff',
+        padding: 50,
+        marginVertical: 8,
+        marginHorizontal: 16,
+        borderRadius: 30,
+        marginVertical: 15,
     }
 });
 
